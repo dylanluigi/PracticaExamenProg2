@@ -1,4 +1,4 @@
-package RecorregutFitxers2;
+package RecorregutSentinela1;
 
 import java.io.*;
 import java.util.logging.Level;
@@ -8,47 +8,39 @@ public class Main {
 
 
     public static void main(String[] args){
+        try {
 
-        try{
-
-            FileOutputStream fos = new FileOutputStream("src/RecorregutFitxers2/persones.dat");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/RecorregutSentinela1/persones.dat"));
 
             for (int i = 0; i < 4; i++) {
-                Persona p = new Persona();
-                String s = llegirCadena();
-                int x = llegirNum();
-                p.setName(s);
-                p.setCode(x);
+                Persona p = new Persona(llegirCadena(), llegirNum());
                 oos.writeObject(p);
             }
-
+            oos.writeObject(Persona.centinela);
             oos.close();
 
-            FileInputStream fis = new FileInputStream("src/RecorregutFitxers2/persones.dat");
-            ObjectInputStream ois = new ObjectInputStream(fis);
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/RecorregutSentinela1/persones.dat"));
 
-            Persona p;
-            boolean eof = false;
+            Persona p = (Persona) ois.readObject();
 
-            do {
-                try{
-                    p = (Persona) ois.readObject();
-                    System.out.println(p);
+            while (!p.esCentinela()){
+                System.out.println(p);
+                p = (Persona) ois.readObject();
+            }
 
-                }catch (EOFException eofException){
-                    eof=true;
-                }
-
-            }while (!eof);
             ois.close();
             System.out.println("Bye!");
 
-        }catch (IOException | ClassNotFoundException e){
-            e.printStackTrace();
+        }catch (IOException ioException){
+            ioException.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
+
     }
+
+
 
     private static String llegirCadena() {
         String s = "";
@@ -75,10 +67,4 @@ public class Main {
         }
         return x;
     }
-
-
-
-
-
-
 }

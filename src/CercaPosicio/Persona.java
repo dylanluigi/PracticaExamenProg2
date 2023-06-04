@@ -1,4 +1,4 @@
-package RecorregutFitxers2;
+package CercaPosicio;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -8,9 +8,14 @@ public class Persona implements Serializable {
     @Serial
     private static final long serialVersionUID = 42L;
     private String name;
-
     private int code;
 
+    public static final Persona centinela = new Persona("zzz",999);
+
+    public Persona(String name, int code){
+        this.name = name;
+        this.code = code;
+    }
 
     public Persona(){
         name=null;
@@ -39,5 +44,9 @@ public class Persona implements Serializable {
 
     public void setCode(int code) {
         this.code = code;
+    }
+
+    public boolean esCentinela(){
+        return name.equals(centinela.name);
     }
 }
