@@ -2,7 +2,7 @@ Ejercicio 1:
 
 Escribe una classe que simuili el funcionament d'una cua de dades.
 Es requereix que la cua estigui implementada mitjançant una taula circular de mida fixe.
-<img src="/Users/dylan/Desktop/UIB/Programamcio II/PracticaExamenProg2/src/Examen/Exc1/enunciado1.png" width="200"/>
+<img src="src/Examen/Exc1/enunciado1.png" width="200"/>
 
 Quan diem que la taula és circular és perquè ens imaginem
 que per una taula de n posicions, la posició
