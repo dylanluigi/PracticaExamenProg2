@@ -52,9 +52,7 @@ public class e4 {
         }
 
         public void add(char c){
-
             if(longitud==MAX){
-
                 char[] aux = new char[lletres.length+1];
                 for (int i = 0; i < lletres.length; i++) {
                     aux[i]=lletres[i];
@@ -62,7 +60,6 @@ public class e4 {
                 lletres=aux;
             }
             lletres[longitud++]=c;
-
         }
 
         public boolean isNull(){
@@ -72,12 +69,6 @@ public class e4 {
         public int length(){
             return longitud;
         }
-
-
-        public char charAt(int i){
-            return lletres[i];
-        }
-
 
         public boolean isHigherAlphabetically(Paraula p) {
             int minLength = Math.min(this.longitud, p.longitud);
@@ -96,13 +87,12 @@ public class e4 {
 
         @Override
         public String toString() {
-            String s = Arrays.toString(lletres);
-            return s;
+            return Arrays.toString(lletres);
         }
     }
 
     public static class RegistreFrequencies{
-        private Paraula p;
+        private final Paraula p;
         private int freq;
 
         public RegistreFrequencies(Paraula p){
