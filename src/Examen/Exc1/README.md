@@ -16,7 +16,7 @@ Desencuar un element implica extreure un element de l'estructura, per aixo s'ha 
 
 Noteu que en cap cas desplacem els elements, tant a l'hora d'encuar com de desencuar, simplement canviem les referencies del primer i de l'ultim.
 
-El metode toString retornara una cadena de caracters amb tots els elements de la cua, des del primer fins a l'ultim, entre claudators.
+El metode toString retornarà una cadena de caracters amb tots els elements de la cua, des del primer fins a l'últim, entre claudators.
 
 Contingut de l'estructura circular:<br>
 [1]<br>
