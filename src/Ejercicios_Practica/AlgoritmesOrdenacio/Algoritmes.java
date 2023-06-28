@@ -31,7 +31,7 @@ public class Algoritmes {
         for (int i = 0; i < N-1; i++) {
             min=array[i];
             j_min = i;
-            for (int j = 0; j < i+1; j++) {
+            for (int j = i+1; j < i+1; j++) {
                 if (array[j].clau<min.clau){
                     min = array[j];
                     j_min=j;
@@ -41,6 +41,7 @@ public class Algoritmes {
             array[i]=min;
         }
     }
+
 
     public static void BubbleSort(Dades[] array){
         final int N = array.length;
