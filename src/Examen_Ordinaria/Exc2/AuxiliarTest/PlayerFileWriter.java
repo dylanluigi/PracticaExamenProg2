@@ -1,5 +1,5 @@
-package Examen.Exc2.AuxiliarTest;
-import Examen.Exc2.e2;
+package Examen_Ordinaria.Exc2.AuxiliarTest;
+import Examen_Ordinaria.Exc2.e2;
 
 import java.io.*;
 

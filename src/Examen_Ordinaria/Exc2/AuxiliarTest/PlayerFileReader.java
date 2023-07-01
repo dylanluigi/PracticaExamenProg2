@@ -1,6 +1,6 @@
-package Examen.Exc2.AuxiliarTest;
+package Examen_Ordinaria.Exc2.AuxiliarTest;
 
-import Examen.Exc2.e2;
+import Examen_Ordinaria.Exc2.e2;
 
 import java.io.*;
 import java.util.ArrayList;

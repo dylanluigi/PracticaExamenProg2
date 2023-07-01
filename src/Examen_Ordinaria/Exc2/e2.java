@@ -1,7 +1,7 @@
-package Examen.Exc2;
+package Examen_Ordinaria.Exc2;
 
-import Examen.Exc2.AuxiliarTest.PlayerFileReader;
-import Examen.Exc2.AuxiliarTest.PlayerFileWriter;
+import Examen_Ordinaria.Exc2.AuxiliarTest.PlayerFileReader;
+import Examen_Ordinaria.Exc2.AuxiliarTest.PlayerFileWriter;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

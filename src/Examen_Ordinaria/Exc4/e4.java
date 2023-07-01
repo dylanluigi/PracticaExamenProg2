@@ -1,4 +1,4 @@
-package Examen.Exc4;
+package Examen_Ordinaria.Exc4;
 
 import java.util.Arrays;
 

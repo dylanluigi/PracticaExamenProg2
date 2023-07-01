@@ -1,4 +1,4 @@
-package Examen.Exc1;
+package Examen_Ordinaria.Exc1;
 
 import java.util.Scanner;
 

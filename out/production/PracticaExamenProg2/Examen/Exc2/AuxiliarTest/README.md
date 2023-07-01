@@ -1,1 +1,0 @@
-Solo para llevar a cabo los tests de funcionamiento.
