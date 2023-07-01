@@ -1,4 +1,4 @@
-package Examen.Exc5;
+package Examen_Ordinaria.Exc5;
 
 public class e5 {
 
