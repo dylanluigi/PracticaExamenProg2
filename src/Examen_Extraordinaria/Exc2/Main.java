@@ -1,8 +1,6 @@
 package Examen_Extraordinaria.Exc2;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
@@ -15,40 +13,49 @@ public class Main {
         Scanner s = new Scanner(System.in);
         System.out.print("NIF: ");
         String NIF = s.nextLine();
+
+        String[] estudiants1 = {"NIF1", "NIF2"};
+        int[] notes1 = {80, 90};
+        Assignatura assignatura1 = new Assignatura(101, "Mathematics", 1, estudiants1, notes1);
+
+        String[] estudiants2 = {"NIF3", "NIF4"};
+        int[] notes2 = {85, 95};
+        Assignatura assignatura2 = new Assignatura(102, "Physics", 1, estudiants2, notes2);
+
+        generateAssignaturaFile("assignatures.dat", assignatura1, assignatura2);
+
         find(NIF);
 
     }
 
+    public static void generateAssignaturaFile(String filename, Assignatura... assignaturas) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
+            for (Assignatura assignatura : assignaturas) {
+                oos.writeObject(assignatura);
+            }
+            oos.writeObject(Assignatura.centinela);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static void find(String NIF) throws IOException, ClassNotFoundException {
-
-        oisEst = new ObjectInputStream(new FileInputStream("estudiants.dat"));
         oisAss = new ObjectInputStream(new FileInputStream("assignatures.dat"));
 
-        Estudiant est;
-        est = (Estudiant) oisEst.readObject();
-        boolean found = false;
+        Assignatura ass;
+        ass = (Assignatura) oisAss.readObject();
 
-        while (!est.isSentinela() && !found){
-            if (est.getNIF().equals(NIF)){
-                found = true;
+        while (!ass.esCentinela()){
+            if (ass.conte(NIF)){
+                System.out.println("CODI: "+ass.getCODI()+" - NOM: "+ass.getNOM()+" CURS: "+ass.getCURS()+" NOTA: "+ass.getNota(NIF));
             }
-        }
-
-        if (found){
-
-            Assignatura ass;
             ass = (Assignatura) oisAss.readObject();
-
-            while (!ass.esCentinela()){
-                if (ass.conte(NIF)){
-                    System.out.println("CODI: "+ass.getCODI()+" - NOM: "+ass.getNOM()+" CURS: "+ass.getCURS()+" NOTA: "+ass.getNota(NIF));
-                }
-            }
-
         }
 
+        oisAss.close();
     }
+
 
 
 

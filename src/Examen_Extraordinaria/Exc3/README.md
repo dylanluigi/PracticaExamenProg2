@@ -1,0 +1,1 @@
+Sigui una classe Menu sèrie d'atributs, entre ells un atribut enumerat dia que té com a possibles valors: DILLUNS, DIMARTS, DIMECRES, DIJOUS, DIVENDRES, DISSABTE i DIUMENGE. Escriu el mètode que permeti ordenar un array d'objectes de la classe Menu segons l'atribut dia emprant l'algorisme de la bombolla millorada.

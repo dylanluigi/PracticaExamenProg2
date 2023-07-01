@@ -60,20 +60,19 @@ public class Assignatura implements Serializable {
         this.nEstudiants = nEstudiants;
     }
 
-    public boolean conte(String NIF){
+    public boolean conte(String NIF) {
 
         boolean found = false;
 
         for (int i = 0; i < estudiants.length && !found; i++) {
-
-            if (estudiants[i]==NIF){
-                found=true;
+            // Use .equals() to compare strings
+            if (estudiants[i].equals(NIF)) {
+                found = true;
             }
-
         }
         return found;
+
     }
 
-
-    public boolean esCentinela() {return CODI == centinela.CODI;}
+        public boolean esCentinela() {return CODI == centinela.CODI;}
 }
